@@ -11,10 +11,9 @@
 전처리 지시자 : upper_snake_case
 */
 
-struct SkrDist
-{   
-    uint16_t message_id;
-    int16_t skr_dist;
+struct SkrDist {
+  uint16_t message_id;
+  int16_t skr_dist;
 };
 
 #endif // SKR_DIST_HPP
