@@ -1,8 +1,8 @@
 #ifndef TargetDistanceReq_HPP
 #define TargetDistanceReq_HPP
-#include<cstdint>
+#include <cstdint>
 class TargetDistanceReq {
-    uint16_t message_id;
+  uint16_t message_id;
 };
 
 #endif // TargetDistanceReq_HPP
