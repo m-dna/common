@@ -1,5 +1,7 @@
+#ifndef SKR_STATUS_HPP
+#define SKR_STATUS_HPP
 
-enum class SKR_STATUS
+enum class SkrStatus
 {
     INIT, // 초기화
     STANBY, // 대기
@@ -10,3 +12,5 @@ enum class SKR_STATUS
     ERROR // 에러
 
 };
+
+#endif // SKR_STATUS_HPP
