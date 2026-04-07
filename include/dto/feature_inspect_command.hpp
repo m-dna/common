@@ -3,10 +3,9 @@
 
 #include <cstdint>
 
-struct FeatureInspectCommand
-{
-    uint16_t message_id;
-    uint32_t loop_count;
+struct FeatureInspectCommand {
+  uint16_t message_id;
+  uint32_t loop_count;
 };
 
-#endif // FEATURE_INSPECT_COMMAND_HPP
+#endif  // FEATURE_INSPECT_COMMAND_HPP
