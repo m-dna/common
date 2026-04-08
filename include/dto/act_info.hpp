@@ -1,7 +1,7 @@
 #ifndef ACT_INFO_HPP
 #define ACT_INFO_HPP
 #include <stdint.h>
-struct act_info {
+struct ActInfo {
   uint16_t message_id;
   uint8_t act_status;
   int32_t a_motor_theta;
