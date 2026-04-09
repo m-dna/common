@@ -40,24 +40,7 @@ jobs:
           curl -X POST "https://kapi.kakao.com/v2/api/talk/memo/default/send" \
             -H "Authorization: Bearer ${{ steps.refresh.outputs.access_token }}" \
             -H "Content-Type: application/x-www-form-urlencoded" \
-            --data-urlencode "template_object={
-                \"object_type\": \"feed\",
-                \"content\": {
-                  \"title\": \"✅ PR Merge 완료\",
-                  \"description\": \"${{ github.event.pull_request.title }}\",
-                  \"image_url\": \"https://via.placeholder.com/300x200\",
-                  \"link\": {
-                    \"web_url\": \"${{ github.event.pull_request.html_url }}\",
-                    \"mobile_web_url\": \"${{ github.event.pull_request.html_url }}\"
-                  }
-                },
-                \"buttons\": [
-                  {
-                    \"title\": \"PR 보기\",
-                    \"link\": {
-                      \"web_url\": \"${{ github.event.pull_request.html_url }}\",
-                      \"mobile_web_url\": \"${{ github.event.pull_request.html_url }}\"
-                    }
-                  }
-                ]
-              }"
+            -d 'template_object={
+              "object_type":"text",
+              "text":"✅ Common PR Merge 완료\n\n📌 제목: ${{ github.event.pull_request.title }}\n\n🔗 ${{ github.event.pull_request.html_url }}"
+            }'
