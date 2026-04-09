@@ -42,5 +42,9 @@ jobs:
             -H "Content-Type: application/x-www-form-urlencoded" \
             -d 'template_object={
               "object_type":"text",
-              "text":"✅ Common 브랜치 PR Merge 완료\n\n📌 제목: ${{ github.event.pull_request.title }}\n\n🔗 ${{ github.event.pull_request.html_url }}",
+              "text":"✅ Common 레포 PR Merge 완료\n\n📌 제목: ${{ github.event.pull_request.title }}\n\n🔗 ${{ github.event.pull_request.html_url }}",
+              "link":{
+                "web_url":"${{ github.event.pull_request.html_url }}",
+                "mobile_web_url":"${{ github.event.pull_request.html_url }}"
+              }
             }'
