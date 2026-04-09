@@ -4,14 +4,16 @@
 #include <stdint.h>
 
 #include "../fsm/act_status.h"
+#include "act_data.h"
+#include "common_parameter.h"
 
 typedef struct {
   uint16_t message_id;
   ActStatus act_status;
-  int32_t a_motor_theta;
-  int32_t a_motor_omega;
-  int32_t b_motor_theta;
-  int32_t b_motor_omega;
+
+  CommonParameter cp;
+  ActData data;
+
 } ActInfo;
 
-#endif  // ACT_INFO_H
+#endif // ACT_INFO_H
