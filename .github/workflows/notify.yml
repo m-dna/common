@@ -1,0 +1,50 @@
+name: Kakao Notification
+
+on:
+  pull_request:
+    types: [closed]
+
+jobs:
+  notify:
+    environment: notify
+    if: github.event.pull_request.merged == true
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Install jq
+        run: sudo apt-get install -y jq
+
+      - name: Refresh Token
+        id: refresh
+        run: |
+          RESPONSE=$(curl -s -X POST "https://kauth.kakao.com/oauth/token" \
+            -d "grant_type=refresh_token" \
+            -d "client_id=${{ secrets.KAKAO_API_KEY }}" \
+            -d "client_secret=${{ secrets.KAKAO_SECRET }}" \
+            -d "refresh_token=${{ secrets.KAKAO_TOKEN }}")
+
+          echo "$RESPONSE"
+
+          ACCESS_TOKEN=$(echo $RESPONSE | jq -r '.access_token')
+          NEW_REFRESH_TOKEN=$(echo $RESPONSE | jq -r '.refresh_token')
+
+          echo "access_token=$ACCESS_TOKEN" >> $GITHUB_OUTPUT
+
+          # refresh_token 갱신되면 출력 (수동 업데이트용)
+          if [ "$NEW_REFRESH_TOKEN" != "null" ]; then
+            echo "⚠️ NEW REFRESH TOKEN: $NEW_REFRESH_TOKEN"
+          fi
+
+      - name: Send Kakao Message
+        run: |
+          curl -X POST "https://kapi.kakao.com/v2/api/talk/memo/default/send" \
+            -H "Authorization: Bearer ${{ steps.refresh.outputs.access_token }}" \
+            -H "Content-Type: application/x-www-form-urlencoded" \
+            -d 'template_object={
+              "object_type":"text",
+              "text":"✅ Common 레포 PR Merge 완료\n\n📌 제목: ${{ github.event.pull_request.title }}\n\n🔗 ${{ github.event.pull_request.html_url }}",
+              "link":{
+                "web_url":"${{ github.event.pull_request.html_url }}",
+                "mobile_web_url":"${{ github.event.pull_request.html_url }}"
+              }
+            }'
