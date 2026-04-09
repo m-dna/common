@@ -20,6 +20,7 @@ jobs:
           RESPONSE=$(curl -s -X POST "https://kauth.kakao.com/oauth/token" \
             -d "grant_type=refresh_token" \
             -d "client_id=${{ secrets.KAKAO_API_KEY }}" \
+            -d "client_secret=${{ secrets.KAKAO_SECRET }}" \
             -d "refresh_token=${{ secrets.KAKAO_TOKEN }}")
 
           echo "$RESPONSE"
