@@ -1,5 +1,5 @@
-#ifndef SKR_DIST_HPP
-#define SKR_DIST_HPP
+#ifndef TargetDistanceRes_HPP
+#define TargetDistanceRes_HPP
 #include <cstdint>
 
 /*
@@ -11,9 +11,8 @@
 전처리 지시자 : upper_snake_case
 */
 
-struct SkrDist {
+struct TargetDistanceRes {
   uint16_t message_id;
   int16_t skr_dist;
 };
-
-#endif // SKR_DIST_HPP
+#endif // TargetDistanceRes_HPP
