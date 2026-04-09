@@ -1,6 +1,6 @@
 #ifndef TargetDistanceRes_HPP
 #define TargetDistanceRes_HPP
-#include <cstdint>
+#include <stdint.h>
 
 /*
 구조체 : 파스칼 : SkrStatus
@@ -15,4 +15,4 @@ struct TargetDistanceRes {
   uint16_t message_id;
   int16_t skr_dist;
 };
-#endif // TargetDistanceRes_HPP
+#endif  // TargetDistanceRes_HPP

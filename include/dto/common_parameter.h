@@ -8,7 +8,6 @@ typedef struct {
   uint8_t mcu_voltage;
   uint8_t cpu_temperature;
   uint8_t cpu_usage;
-  uint8_t ram_usage;
   uint8_t heap_usage;
 } CommonParameter;
 
