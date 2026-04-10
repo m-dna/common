@@ -4,26 +4,26 @@
 #include <cstdint>
 
 enum class IcdId : uint16_t {
-  COMMON_PARAMETER = 0x0000,
-  ACT_INFO = 0x0001,
-  FULL_SYSTEM_INFO = 0x0002,
-  INS_DATA = 0x0003,
-  INS_INFO = 0x0004,
-  SKR_INFO = 0x0005,
-  FEATURE_INSPECT_COMMAND = 0x0006,
-  FEATURE_INSPECT_READY_RES = 0x0007,
-  TARGET_DISTANCE_REQ = 0x0008,
-  TARGET_DISTANCE_RES = 0x0009,
-  POSITION_REQ = 0x000A,
-  POSITION_RES = 0x000B,
-  PIN_CONTROL_REQ = 0x000C,
-  PIN_CONTROL_RES = 0x000D,
-  FEATURE_INSPECT_FINISH_COMMAND = 0x000E,
-  FEATURE_INSPECT_FINISH_RES = 0x000F,
-  ONE_TEST_RESULT = 0x0010,
-  REBOOT_COMMAND = 0x0011,
-  REBOOT_RES = 0x0012,
-  FEATURE_INSPECT_READY_COMMAND = 0x0013
+  COMMON_PARAMETER = 0x0000,  // 공통매개변수(common_parameter)
+  ACT_INFO = 0x0001,          // ACT정보(act_info)
+  FULL_SYSTEM_INFO = 0x0002,  // 부체계 정보 및 GCU 정보(full_system_info)
+  INS_DATA = 0x0003,          // INS값(ins_data)
+  INS_INFO = 0x0004,          // INS정보(ins_info)
+  SKR_INFO = 0x0005,          // SKR정보(skr_info)
+  FEATURE_INSPECT_COMMAND = 0x0006,  // 기능점검명령(feature_inspect_command)
+  FEATURE_INSPECT_READY_RES = 0x0007,  // 기능점검준비완료응답(feature_inspect_ready_res)
+  TARGET_DISTANCE_REQ = 0x0008,  // 목표거리오차요청(target_distance_req)
+  TARGET_DISTANCE_RES = 0x0009,  // 목표거리오차응답(target_distance_res)
+  POSITION_REQ = 0x000A,         // 자세요청(position_req)
+  POSITION_RES = 0x000B,         // 자세응답(position_res)
+  PIN_CONTROL_REQ = 0x000C,      // 핀제어요청(pin_control_req)
+  PIN_CONTROL_RES = 0x000D,      // 핀제어응답(pin_control_res)
+  FEATURE_INSPECT_FINISH_COMMAND = 0x000E,  // 기능점검종료명령(feature_inspect_finish_command)
+  FEATURE_INSPECT_FINISH_RES = 0x000F,                // 기능점검종료응답(feature_inspect_finish_res)
+  ONE_TEST_RESULT = 0x0010,  // 1회 수행결과 전송(one_test_result)
+  REBOOT_COMMAND = 0x0011,   // 재부팅 명령 전송(reboot_command)
+  REBOOT_RES = 0x0012,       // 재부팅 명령 응답(reboot_res)
+  FEATURE_INSPECT_READY_COMMAND = 0x0013  // 기능점검준비완료명령(feature_inspect_ready_command)
 };
 
 #endif  // ICD_ID_H
