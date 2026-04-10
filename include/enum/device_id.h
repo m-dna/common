@@ -8,7 +8,7 @@ enum class DeviceId : uint8_t {
   ACT = 0x01,     // 액추에이터
   INS = 0x02,     // 비행제어장치
   SKR = 0x03,     // 탐색기
-  UI = 0x04       // 사용자 인터페이스
+  UI = 0x04,      // 사용자 인터페이스
   INVALID = 0xFF  // 유효하지 않은 장치 ID
 };
 
