@@ -3,9 +3,11 @@
 
 #include <cstdint>
 
+#include "../enum/icd_id.h"
+
 #pragma pack(push, 1)
 struct PinControlReq {
-  uint16_t message_id;
+  IcdId message_id;
   int32_t a_motor_theta;
   int32_t b_motor_theta;
 };

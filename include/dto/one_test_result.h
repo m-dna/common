@@ -3,13 +3,14 @@
 
 #include <cstdint>
 
+#include "../enum/icd_id.h"
 #include "pin_control_req.h"
 #include "position_res.h"
 #include "target_distance_res.h"
 
 #pragma pack(push, 1)
 struct OneTestResult {
-  uint16_t message_id;
+  IcdId message_id;
   TargetDistanceRes target_distance_res;
   PositionRes position_res;
   PinControlReq pin_control_req;

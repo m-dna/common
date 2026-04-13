@@ -3,9 +3,11 @@
 
 #include <cstdint>
 
+#include "../enum/icd_id.h"
+
 #pragma pack(push, 1)
 struct FeatureInspectCommand {
-  uint16_t message_id;
+  IcdId message_id;
   uint32_t loop_count;
 };
 #pragma pack(pop)
