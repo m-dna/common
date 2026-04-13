@@ -1,10 +1,12 @@
 #ifndef RebootRes_H
 #define RebootRes_H
 
-#include <stdint.h>
+#include <cstdint>
 
-typedef struct {
+#pragma pack(push, 1)
+struct RebootRes {
   uint16_t message_id;
-} RebootRes;
+};
+#pragma pack(pop)
 
 #endif // RebootRes_H

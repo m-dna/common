@@ -1,9 +1,12 @@
 #ifndef FeatureInspectReadyCommand_HPP
 #define FeatureInspectReadyCommand_HPP
 
-#include <stdint.h>
+#include <cstdint>
 
+#pragma pack(push, 1)
 struct FeatureInspectReadyCommand {
   uint16_t message_id;
 };
-#endif  // FeatureInspectReadyCommand_HPP
+#pragma pack(pop)
+
+#endif // FeatureInspectReadyCommand_HPP
