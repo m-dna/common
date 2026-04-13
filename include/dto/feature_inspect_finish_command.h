@@ -1,10 +1,12 @@
 #ifndef FeatureInspectFinishCommand_H
 #define FeatureInspectFinishCommand_H
 
-#include <stdint.h>
+#include <cstdint>
 
-typedef struct {
+#pragma pack(push, 1)
+struct FeatureInspectFinishCommand {
   uint16_t message_id;
-} FeatureInspectFinishCommand;
+};
+#pragma pack(pop)
 
-#endif  // FeatureInspectFinishCommand_H
+#endif // FeatureInspectFinishCommand_H

@@ -1,11 +1,13 @@
 #ifndef FEATURE_INSPECT_COMMAND_H
 #define FEATURE_INSPECT_COMMAND_H
 
-#include <stdint.h>
+#include <cstdint>
 
-typedef struct {
+#pragma pack(push, 1)
+struct FeatureInspectCommand {
   uint16_t message_id;
   uint32_t loop_count;
-} FeatureInspectCommand;
+};
+#pragma pack(pop)
 
-#endif  // FEATURE_INSPECT_COMMAND_H
+#endif // FEATURE_INSPECT_COMMAND_H

@@ -1,13 +1,14 @@
 #ifndef OneTestResult_H
 #define OneTestResult_H
 
-#include <stdint.h>
+#include <cstdint>
 
 #include "pin_control_req.h"
 #include "position_res.h"
 #include "target_distance_res.h"
 
-typedef struct {
+#pragma pack(push, 1)
+struct OneTestResult {
   uint16_t message_id;
   TargetDistanceRes target_distance_res;
   PositionRes position_res;
@@ -16,6 +17,7 @@ typedef struct {
   uint32_t act_comm_time;
   uint32_t ins_comm_time;
   uint32_t skr_comm_time;
-} OneTestResult;
+};
+#pragma pack(pop)
 
 #endif // OneTestResult_H

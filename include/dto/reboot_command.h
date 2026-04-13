@@ -1,12 +1,15 @@
 #ifndef RebootCommand_H
 #define RebootCommand_H
 
-#include <stdint.h>
+#include <cstdint>
 
 #include "../enum/subsystem.h"
 
-typedef struct {
+#pragma pack(push, 1)
+struct RebootCommand {
   uint16_t message_id;
   SubSystem target;
-} RebootCommand;
-#endif  // RebootCommand_H
+};
+#pragma pack(pop)
+
+#endif // RebootCommand_H

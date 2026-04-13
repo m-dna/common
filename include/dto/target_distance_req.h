@@ -1,10 +1,12 @@
 #ifndef TargetDistanceReq_H
 #define TargetDistanceReq_H
 
-#include <stdint.h>
+#include <cstdint>
 
-typedef struct {
+#pragma pack(push, 1)
+struct TargetDistanceReq {
   uint16_t message_id;
-} TargetDistanceReq;
+};
+#pragma pack(pop)
 
-#endif  // TargetDistanceReq_H
+#endif // TargetDistanceReq_H

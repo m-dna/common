@@ -1,6 +1,7 @@
 #ifndef SKR_DIST_H
 #define SKR_DIST_H
-#include <stdint.h>
+
+#include <cstdint>
 
 /*
 구조체 : 파스칼 : SkrStatus
@@ -10,10 +11,11 @@
 함수 : 스네이크
 전처리 지시자 : upper_snake_case
 */
-
-typedef struct {
+#pragma pack(push, 1)
+struct SkrDist {
   uint16_t message_id;
   int16_t skr_dist;
-} SkrDist;
+};
+#pragma pack(pop)
 
-#endif  // SKR_DIST_H
+#endif // SKR_DIST_H

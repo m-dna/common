@@ -1,9 +1,12 @@
 #ifndef FeatureInspectReadyRes_HPP
 #define FeatureInspectReadyRes_HPP
 
-#include <stdint.h>
+#include <cstdint>
 
+#pragma pack(push, 1)
 struct FeatureInspectReadyRes {
   uint16_t message_id;
 };
-#endif  // FeatureInspectReadyRes_HPP
+#pragma pack(pop)
+
+#endif // FeatureInspectReadyRes_HPP
