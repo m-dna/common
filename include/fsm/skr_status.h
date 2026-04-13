@@ -4,13 +4,13 @@
 #include <cstdint>
 
 enum class SkrStatus : uint8_t {
-  SKR_STATUS_INIT,         // 초기화
-  SKR_STATUS_STANDBY,      // 대기
-  SKR_STATUS_CHECK,        // 점검
-  SKR_STATUS_SEARCH_READY, // 탐색 준비
-  SKR_STATUS_SEARCH,       //  탐색
-  SKR_STATUS_TRACK,        // 추적
-  SKR_STATUS_ERROR         // 에러
+  INIT,         // 초기화
+  STANDBY,      // 대기
+  CHECK,        // 점검
+  SEARCH_READY, // 탐색 준비
+  SEARCH,       //  탐색
+  TRACK,        // 추적
+  ERROR         // 에러
 };
 
 #endif // SKR_STATUS_H
