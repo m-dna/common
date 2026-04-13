@@ -3,6 +3,8 @@
 
 #include <cstdint>
 
+#include "../enum/icd_id.h"
+
 /*
 구조체 : 파스칼 : SkrStatus
 열겨형 : 파스칼 : SkrStatus
@@ -14,7 +16,7 @@
 
 #pragma pack(push, 1)
 struct TargetDistanceRes {
-  uint16_t message_id;
+  IcdId message_id;
   int16_t skr_dist;
 };
 #pragma pack(pop)

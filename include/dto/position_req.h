@@ -3,9 +3,11 @@
 
 #include <cstdint>
 
+#include "../enum/icd_id.h"
+
 #pragma pack(push, 1)
 struct PositionReq {
-  uint16_t message_id;
+  IcdId message_id;
 };
 #pragma pack(pop)
 

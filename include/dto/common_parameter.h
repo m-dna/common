@@ -3,9 +3,11 @@
 
 #include <cstdint>
 
+#include "../enum/icd_id.h"
+
 #pragma pack(push, 1)
 struct CommonParameter {
-  uint16_t message_id;
+  IcdId message_id;
   uint8_t mcu_voltage;
   uint8_t cpu_temperature;
   uint8_t cpu_usage;

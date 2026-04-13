@@ -3,11 +3,12 @@
 
 #include <cstdint>
 
+#include "../enum/icd_id.h"
 #include "../enum/subsystem.h"
 
 #pragma pack(push, 1)
 struct RebootCommand {
-  uint16_t message_id;
+  IcdId message_id;
   SubSystem target;
 };
 #pragma pack(pop)

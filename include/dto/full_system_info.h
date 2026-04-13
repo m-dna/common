@@ -3,6 +3,7 @@
 
 #include <cstdint>
 
+#include "../enum/icd_id.h"
 #include "../fsm/gcu_status.h"
 #include "act_info.h"
 #include "common_parameter.h"
@@ -11,7 +12,7 @@
 
 #pragma pack(push, 1)
 struct FullSystemInfo {
-  uint16_t message_id;
+  IcdId message_id;
   GcuStatus gcu_status;
   CommonParameter common_parameter;
   ActInfo act_info;
