@@ -9,8 +9,9 @@ enum class DeviceId : uint8_t {
   INS = 0x02,    // 비행제어장치
   SKR = 0x03,    // 탐색기
   UI = 0x04,     // 사용자 인터페이스
-  TEST1 = 0x05,  // 테스트 장치 1
-  TEST2 = 0x06,  // 테스트 장치 2
+  HILS = 0x05,   // HILS 장치
+  TEST1 = 0x06,  // 테스트 장치 1
+  TEST2 = 0x07,  // 테스트 장치 2
   INVALID = 0xFF // 유효하지 않은 장치 ID
 };
 
