@@ -18,6 +18,7 @@ struct OneTestResult {
   uint32_t act_comm_time;
   uint32_t ins_comm_time;
   uint32_t skr_comm_time;
+  uint8_t is_success;
 };
 #pragma pack(pop)
 
