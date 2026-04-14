@@ -4,6 +4,7 @@
 #include <cstdint>
 
 #include "../enum/icd_id.h"
+#include "../enum/sub_system.h"
 
 #pragma pack(push, 1)
 struct FeatureInspectFinishRes {
