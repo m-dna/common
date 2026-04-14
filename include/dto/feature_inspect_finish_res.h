@@ -8,6 +8,7 @@
 #pragma pack(push, 1)
 struct FeatureInspectFinishRes {
   IcdId message_id;
+  SubSystem my_sub_system;
 };
 #pragma pack(pop)
 
