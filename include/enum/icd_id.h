@@ -11,20 +11,29 @@ enum class IcdId : uint16_t {
   INS_INFO = 0x0004,                // INS정보(ins_info)
   SKR_INFO = 0x0005,                // SKR정보(skr_info)
   FEATURE_INSPECT_COMMAND = 0x0006, // 기능점검명령(feature_inspect_command)
-  FEATURE_INSPECT_READY_RES = 0x0007, // 기능점검준비완료응답(feature_inspect_ready_res)
+  FEATURE_INSPECT_READY_RES =
+      0x0007, // 기능점검준비완료응답(feature_inspect_ready_res)
   TARGET_DISTANCE_REQ = 0x0008, // 목표거리오차요청(target_distance_req)
   TARGET_DISTANCE_RES = 0x0009, // 목표거리오차응답(target_distance_res)
   POSITION_REQ = 0x000A,        // 자세요청(position_req)
   POSITION_RES = 0x000B,        // 자세응답(position_res)
   PIN_CONTROL_REQ = 0x000C,     // 핀제어요청(pin_control_req)
   PIN_CONTROL_RES = 0x000D,     // 핀제어응답(pin_control_res)
-  FEATURE_INSPECT_FINISH_COMMAND = 0x000E, // 기능점검종료명령(feature_inspect_finish_command)
-  FEATURE_INSPECT_FINISH_RES = 0x000F,               // 기능점검종료응답(feature_inspect_finish_res)
+  FEATURE_INSPECT_FINISH_COMMAND =
+      0x000E, // 기능점검종료명령(feature_inspect_finish_command)
+  FEATURE_INSPECT_FINISH_RES =
+      0x000F,               // 기능점검종료응답(feature_inspect_finish_res)
   ONE_TEST_RESULT = 0x0010, // 1회 수행결과 전송(one_test_result)
   REBOOT_COMMAND = 0x0011,  // 재부팅 명령 전송(reboot_command)
   REBOOT_RES = 0x0012,      // 재부팅 명령 응답(reboot_res)
-  FEATURE_INSPECT_READY_COMMAND = 0x0013,         // 기능점검준비완료명령(feature_inspect_ready_command)
-  ACT_DATA = 0x0014 // ACT값(act_data)
+  FEATURE_INSPECT_READY_COMMAND =
+      0x0013,             // 기능점검준비완료명령(feature_inspect_ready_command)
+  ACT_DATA = 0x0014,      // ACT값(act_data)
+  INS_MAIN_DATA = 0x0015, // INS실제값(ins_main_data)
+  SKR_MAIN_DATA = 0x0016, // SKR실제값(skr_main_data)
+  PIN_CONTROL_MAIN_COMMAND = 0x0017, // 핀제어실제명령(pin_control_main_command)
+  RESET_CUR_POSITION_COMMAND =
+      0x0018 // 현재위치 초기화 명령(reset_cur_position_command)
 };
 
 #endif // ICD_ID_H
