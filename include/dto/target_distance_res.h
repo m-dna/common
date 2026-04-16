@@ -17,8 +17,9 @@
 #pragma pack(push, 1)
 struct TargetDistanceRes {
   IcdId message_id;
-  int16_t skr_dist;
+  int16_t skr_yaw_offset;
+  int16_t skr_pitch_offset;
 };
 #pragma pack(pop)
 
-#endif // TargetDistanceRes_HPP
+#endif  // TargetDistanceRes_HPP
