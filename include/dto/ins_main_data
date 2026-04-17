@@ -1,0 +1,23 @@
+#ifndef INS_MAIN_DATA_H
+#define INS_MAIN_DATA_H
+
+#include <cstdint>
+
+#include "../enum/icd_id.h"
+
+#pragma pack(push, 1)
+struct InsMainData {
+  IcdId message_id;
+  int32_t latitude;
+  int32_t longitude;
+  int32_t altitude;
+  int16_t yaw;
+  int16_t pitch;
+  int16_t roll;
+  int32_t x_velocity;
+  int32_t y_velocity;
+  int32_t z_velocity;
+};
+#pragma pack(pop)
+
+#endif
