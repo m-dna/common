@@ -23,8 +23,12 @@ enum class IcdId : uint16_t {
   ONE_TEST_RESULT = 0x0010, // 1회 수행결과 전송(one_test_result)
   REBOOT_COMMAND = 0x0011,  // 재부팅 명령 전송(reboot_command)
   REBOOT_RES = 0x0012,      // 재부팅 명령 응답(reboot_res)
-  FEATURE_INSPECT_READY_COMMAND = 0x0013,         // 기능점검준비완료명령(feature_inspect_ready_command)
-  ACT_DATA = 0x0014 // ACT값(act_data)
+  FEATURE_INSPECT_READY_COMMAND = 0x0013,             // 기능점검준비완료명령(feature_inspect_ready_command)
+  ACT_DATA = 0x0014,      // ACT값(act_data)
+  INS_MAIN_DATA = 0x0015, // INS실제값(ins_main_data)
+  SKR_MAIN_DATA = 0x0016, // SKR실제값(skr_main_data)
+  PIN_CONTROL_MAIN_COMMAND = 0x0017, // 핀제어실제명령(pin_control_main_command)
+  RESET_CUR_POSITION_COMMAND = 0x0018 // 현재위치 초기화 명령(reset_cur_position_command)
 };
 
 #endif // ICD_ID_H
