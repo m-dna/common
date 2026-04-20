@@ -11,9 +11,10 @@ struct InsMainData {
   int32_t latitude;
   int32_t longitude;
   int32_t altitude;
-  int16_t yaw;
-  int16_t pitch;
-  int16_t roll;
+  int32_t q_w;
+  int32_t q_x;
+  int32_t q_y;
+  int32_t q_z;
   int32_t x_velocity;
   int32_t y_velocity;
   int32_t z_velocity;
