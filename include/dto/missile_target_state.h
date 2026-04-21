@@ -23,6 +23,12 @@ struct MissileTargetState {
   int32_t missile_vel_e;
   int32_t missile_vel_d;
 
+  // 미사일 쿼터니언
+  int32_t q_w;
+  int32_t q_x;
+  int32_t q_y;
+  int32_t q_z;
+
   // 표적 위치 (발사점 기준 NED, 0.01 m)
   int32_t target_pos_n;
   int32_t target_pos_e;
