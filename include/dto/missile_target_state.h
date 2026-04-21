@@ -7,7 +7,7 @@
 
 // ICD-26: 미사일/표적 참값 상태 (UI -> GCU, 100ms)
 // SILS 1단계 UI-GCU 통합 ICD — 미사일(6필드) + 표적(6필드) 참값 전달
-// 좌표계: NED (발사점 원점), UI가 WGS84->NED 변환 후 송신
+// 좌표계: NED (발사점 원점)
 // 위치 스케일 0.01 m (cm), 속도 스케일 0.001 m/s (mm/s)
 #pragma pack(push, 1)
 struct MissileTargetState {
