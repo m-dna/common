@@ -28,7 +28,10 @@ enum class IcdId : uint16_t {
   INS_MAIN_DATA = 0x0015, // INS실제값(ins_main_data)
   SKR_MAIN_DATA = 0x0016, // SKR실제값(skr_main_data)
   PIN_CONTROL_MAIN_COMMAND = 0x0017, // 핀제어실제명령(pin_control_main_command)
-  RESET_CUR_POSITION_COMMAND = 0x0018 // 현재위치 초기화 명령(reset_cur_position_command)
+
+  // SILS 1단계 (SRS-GCU-05 항법유도) 신규
+  GUIDANCE_COMMAND     = 0x0018, // 유도 명령 (guidance_command)
+  MISSILE_TARGET_STATE = 0x0019  // 미사일/표적 참값 상태 (missile_target_state)
 };
 
 #endif // ICD_ID_H
