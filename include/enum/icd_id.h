@@ -30,8 +30,9 @@ enum class IcdId : uint16_t {
   PIN_CONTROL_MAIN_COMMAND = 0x0017, // 핀제어실제명령(pin_control_main_command)
 
   // SILS 1단계 (SRS-GCU-05 항법유도) 신규
-  GUIDANCE_COMMAND     = 0x0018, // 유도 명령 (guidance_command)
-  MISSILE_TARGET_STATE = 0x0019  // 미사일/표적 참값 상태 (missile_target_state)
+  GUIDANCE_COMMAND        = 0x0018, // 유도 명령 (guidance_command)
+  MISSILE_TARGET_STATE    = 0x0019, // 미사일/표적 참값 상태 (missile_target_state)
+  NAVIGATION_TEST_COMMAND = 0x001A  // 항법시험 명령 (navigation_test_command)
 };
 
 #endif // ICD_ID_H
