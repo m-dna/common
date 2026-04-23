@@ -8,8 +8,8 @@
 #pragma pack(push, 1)
 struct PinControlMainCommand {
   IcdId message_id;
-  int32_t a_motor_theta;
-  int32_t b_motor_theta;
+  int32_t a_motor_rad;
+  int32_t b_motor_rad;
 };
 #pragma pack(pop)
 
