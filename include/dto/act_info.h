@@ -4,7 +4,7 @@
 #include <cstdint>
 
 #include "../enum/icd_id.h"
-#include "../fsm/act_status.hpp"
+#include "../fsm/act_status.h"
 #include "act_data.h"
 #include "common_parameter.h"
 
