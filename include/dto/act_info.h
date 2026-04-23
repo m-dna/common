@@ -4,9 +4,10 @@
 #include <cstdint>
 
 #include "../enum/icd_id.h"
-#include "../fsm/act_status.h"
+#include "../fsm/act_status.hpp"
 #include "act_data.h"
 #include "common_parameter.h"
+
 
 #pragma pack(push, 1)
 struct ActInfo {
