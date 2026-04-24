@@ -36,7 +36,12 @@ enum class IcdId : uint16_t {
   GUIDANCE_COMMAND = 0x0018,  // 유도 명령 (guidance_command)
   MISSILE_TARGET_STATE =
       0x0019,  // 미사일/표적 참값 상태 (missile_target_state)
-  NAVIGATION_TEST_COMMAND = 0x001A  // 항법시험 명령 (navigation_test_command)
+  NAVIGATION_TEST_COMMAND = 0x001A,  // 항법시험 명령 (navigation_test_command)
+  CONTROL_TEST_COMMAND = 0x001B,     // 제어시험 명령 (control_test_command)
+  CONTROL_TEST_MISSILE_TARGET_STATE =
+      0x001C,  // 제어시험 미사일/표적 상태 (control_test_missile_target_state)
+  CONTROL_TEST_ATTITUDE_FEEDBACK =
+      0x001D  // 제어시험 자세 피드백 (control_test_attitude_feedback)
 };
 
 #endif  // ICD_ID_H
