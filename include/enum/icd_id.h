@@ -41,7 +41,7 @@ enum class IcdId : uint16_t {
   CONTROL_TEST_MISSILE_TARGET_STATE =
       0x001C,  // 제어시험 미사일/표적 상태 (control_test_missile_target_state)
   CONTROL_TEST_ATTITUDE_FEEDBACK =
-      0x001D  // 제어시험 자세 피드백 (control_test_attitude_feedback)
+      0x001D,  // 제어시험 자세 피드백 (control_test_attitude_feedback)
   COMM_RELIABLE_TEST = 0xFFF0,  // 통신 신뢰성 테스트용 ICD ID (comm_reliable_test)
   COMM_BIG_DATA_TEST = 0xFFF1   // 통신 대용량 데이터 테스트용 ICD ID (comm_big_data_test)
 };
