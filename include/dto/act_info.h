@@ -8,6 +8,7 @@
 #include "act_data.h"
 #include "common_parameter.h"
 
+
 #pragma pack(push, 1)
 struct ActInfo {
   IcdId message_id;
