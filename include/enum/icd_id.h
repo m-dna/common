@@ -31,8 +31,8 @@ enum class IcdId : uint16_t {
   ACT_DATA = 0x0014,  // ACT값(act_data)
   INS_MAIN_DATA = 0x0015,  // INS실제값(ins_main_data)
   SKR_MAIN_DATA = 0x0016,  // SKR실제값(skr_main_data)
-  PIN_CONTROL_MAIN_COMMAND =
-      0x0017,                 // 핀제어실제명령(pin_control_main_command)
+  FIN_CONTROL_MAIN_COMMAND =
+      0x0017,                 // 핀제어실제명령(fin_control_main_command)
   GUIDANCE_COMMAND = 0x0018,  // 유도 명령 (guidance_command)
   MISSILE_TARGET_STATE =
       0x0019,  // 미사일/표적 참값 상태 (missile_target_state)
