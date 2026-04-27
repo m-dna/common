@@ -4,6 +4,7 @@
 #include <cstdint>
 
 #include "../enum/icd_id.h"
+#include "dto/ins_main_data.h"
 #include "ins_data.h"
 
 #pragma pack(push, 1)
