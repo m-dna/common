@@ -2,7 +2,7 @@
 #define COMM_BIG_DATA_TEST_H  
 #include <cstdint>
 #include "../enum/icd_id.h"
-#define MAX_SIZE (900 * 1024)  // 900KB
+#define MAX_SIZE (6*1024*1024 + 512*1024)  // 6.5MB
 #pragma pack(push, 1)
 struct CommBigDataTest {
   IcdId message_id;
