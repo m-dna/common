@@ -8,7 +8,7 @@
 #pragma pack(push, 1)
 struct ControlTestCommand {
   IcdId message_id;
-  uint8_t start;  // 1 = 시작, 0 = 종료
+  uint8_t start;  // 1 = 중기 유도 시작, 2 = 호밍 유도 시작, 0 = 종료
 };
 #pragma pack(pop)
 
