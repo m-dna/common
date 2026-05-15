@@ -10,6 +10,8 @@ struct SkrMainData {
   IcdId message_id;
   int32_t skr_yaw_offset;
   int32_t skr_pitch_offset;
+  int32_t skr_yaw_rate;
+  int32_t skr_pitch_rate;
 };
 #pragma pack(pop)
 
