@@ -8,6 +8,7 @@ enum class TypeFlag : uint8_t {
     NONE       = 0x00, // 0000 0000 일반 전송 (fire and forget)
     RELIABLE   = 0x01, // 0000 0001 신뢰성 전송 (stop and wait arq)
     BIG_DATA   = 0x02, // 0000 0010 대용량 데이터 (chunked transfer with reassembly)
+    SECURE     = 0x04, // 0000 0100 보안 통신 (암호화)
     // 0x04 향후 확장가능
 };
 
@@ -15,6 +16,13 @@ enum class ReliableFlag : uint8_t {
     DATA = 0x00, // 0000 0000 신뢰성 데이터
     ACK  = 0x01, // 0000 0001 ACK
     // 0x02 향후 확장
+    // 0x04 향후 확장가능
+};
+
+enum class SecureFlag : uint8_t {
+    REQUEST = 0x00, // 0000 0000 암호화 채널 형성 요청
+    RESPONSE  = 0x01, // 0000 0001 암호화 채널 형성 응답
+    ENCRYPTED  = 0x02, // 0000 0010 암호화 데이터
     // 0x04 향후 확장가능
 };
 
@@ -33,6 +41,12 @@ struct ReliableExHeader {
   //ACK 일때는 목적지 디바이스 고유키가 담김
   uint8_t sequence_number; // 신뢰성 통신을 위한 시퀀스 넘버
   ReliableFlag flags; //신뢰성 통신 유형 플래그 (DATA, ACK)
+};
+
+struct SecureExHeader {
+  uint32_t secure_channel_unique_key; 
+  //보안 통신을 위한 디바이스 고유키
+  SecureFlag flags; //보안 통신 유형 플래그 (REQUEST, RESPONSE, ENCRYPTED)
 };
 
 struct BigDataExHeader {
