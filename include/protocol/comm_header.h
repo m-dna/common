@@ -15,7 +15,7 @@ enum class TypeFlag : uint8_t {
 enum class ReliableFlag : uint8_t {
     DATA = 0x00, // 0000 0000 신뢰성 데이터
     ACK  = 0x01, // 0000 0001 ACK
-    // 0x02 향후 확장
+    // 0x02 향후 확장가능
 };
 
 enum class SecureFlag : uint8_t {
