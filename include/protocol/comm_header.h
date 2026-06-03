@@ -9,20 +9,19 @@ enum class TypeFlag : uint8_t {
     RELIABLE   = 0x01, // 0000 0001 신뢰성 전송 (stop and wait arq)
     BIG_DATA   = 0x02, // 0000 0010 대용량 데이터 (chunked transfer with reassembly)
     SECURE     = 0x04, // 0000 0100 보안 통신 (암호화)
-    // 0x04 향후 확장가능
+    // 0x08 향후 확장가능
 };
 
 enum class ReliableFlag : uint8_t {
     DATA = 0x00, // 0000 0000 신뢰성 데이터
     ACK  = 0x01, // 0000 0001 ACK
     // 0x02 향후 확장
-    // 0x04 향후 확장가능
 };
 
 enum class SecureFlag : uint8_t {
     REQUEST = 0x00, // 0000 0000 암호화 채널 형성 요청
     RESPONSE  = 0x01, // 0000 0001 암호화 채널 형성 응답
-    ENCRYPTED  = 0x02, // 0000 0010 암호화 데이터
+    ENCRYPT  = 0x02, // 0000 0010 암호화 데이터
     // 0x04 향후 확장가능
 };
 
@@ -43,11 +42,31 @@ struct ReliableExHeader {
   ReliableFlag flags; //신뢰성 통신 유형 플래그 (DATA, ACK)
 };
 
-struct SecureExHeader {
-  uint32_t secure_channel_unique_key; 
-  //보안 통신을 위한 디바이스 고유키
-  SecureFlag flags; //보안 통신 유형 플래그 (REQUEST, RESPONSE, ENCRYPTED)
+struct SecureDataExHeader {
+    SecureFlag  flags;      // 보안 통신 유형 플래그 (ENCRYPTED)
+    uint8_t     nonce[12];  // AES-GCM 복호화에 필요한 nonce (매 패킷마다 랜덤 생성)
+    uint8_t     tag[16];    // AES-GCM 무결성 검증 태그
 };
+
+struct SecureRequestExHeader {
+    SecureFlag  flags;              // 보안 통신 유형 플래그 (REQUEST)
+    uint8_t     modulus[256];       // 자신의 RSA 공개키 모듈러스 N (2048bit)
+    uint8_t     public_exponent[3]; // 자신의 RSA 공개 지수 E
+    uint8_t     signature[256];
+    // RSA_서명(SHA256(modulus + public_exponent), 자신의 개인키)
+};
+
+struct SecureResponseExHeader {
+    SecureFlag  flags;                  // 보안 통신 유형 플래그 (RESPONSE)
+    uint8_t     modulus[256];           // 자신의 RSA 공개키 모듈러스 N (2048bit)
+    uint8_t     public_exponent[3];     // 자신의 RSA 공개 지수 E
+    uint8_t     encrypt_session_key[256];
+    // RSA_암호화(세션키, 상대의 modulus + public_exponent)
+    // 상대방의 공개키로 암호화하여 세션키 전달 (상대방의 개인키로만 복호화 가능)
+    uint8_t     signature[256];
+    // RSA_서명(SHA256(modulus + public_exponent + encrypt_session_key), 자신의 개인키)
+};
+
 
 struct BigDataExHeader {
   uint32_t      message_id;        // 큰 메시지의 고유 ID
